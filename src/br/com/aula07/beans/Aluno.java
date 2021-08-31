@@ -1,6 +1,6 @@
 package br.com.aula07.beans;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno> {
 	private String nome;
 	private double media;
 	private int faltas;
@@ -45,6 +45,17 @@ public class Aluno {
 
 	public void setIdade(int idade) {
 		this.idade = idade;
+	}
+
+	@Override
+	public int compareTo(Aluno outroAluno) {
+		if (this.idade  > outroAluno.getIdade()) {
+			return 1;
+		}
+		if (this.idade < outroAluno.getIdade()) {
+			return -1;
+		}
+		return 0;
 	};
 	
 	

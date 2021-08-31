@@ -12,9 +12,7 @@ public class ExecutarCollection {
 
 	public static void main(String[] args) {
 		List<String> nomes = new ArrayList<String>();
-		
-		
-		
+	
 		nomes.add("Beatriz");
 		nomes.add("Pedro");
 		nomes.add("Ana");
@@ -49,6 +47,12 @@ public class ExecutarCollection {
 		
 		for (Aluno a: alunos) {
 			System.out.println(a.getNome() +  " idade:" + a.getIdade());
+		}
+		
+		Collections.sort(alunos);
+		System.out.println("\n\n Lista em ordem Idade");
+		for (Aluno alunoElemento: alunos) {
+			System.out.println(alunoElemento.getNome() + " idade:" + alunoElemento.getIdade());
 		}
 		
 	}
