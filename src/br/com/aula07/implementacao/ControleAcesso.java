@@ -1,10 +1,13 @@
 package br.com.aula07.implementacao;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
-
-import javax.swing.JOptionPane;
 
 import br.com.aula08.util.Input;
 
@@ -12,7 +15,6 @@ public class ControleAcesso {
 
 	public static void main(String[] args) {
 		Scanner leitor = new Scanner (System.in);
-		
 		Set<String> codigo = new HashSet<String>();
 		
 		boolean resp = true;
@@ -44,6 +46,5 @@ public class ControleAcesso {
 			}
 		}
 	}
-
 	}
 }
