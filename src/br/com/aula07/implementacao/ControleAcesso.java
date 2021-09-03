@@ -16,24 +16,34 @@ public class ControleAcesso {
 		Set<String> codigo = new HashSet<String>();
 		
 		boolean resp = true;
-		String leitura;
+		String leitura, tipo;
 		
 		while(resp== true) {
-		leitura = Input.texto("Leitor cracha: ");
-		codigo.add(leitura);
+			
+		tipo = Input.texto("Digite E <entrada ou S <saida>");	
 		
-		if (!codigo.contains(leitura)) {
-			Input.mensagem("Bem vindo! Acesso liberado");
-			codigo.add(leitura);
-		} else {
-			Input.mensagem("Obrigado pela visita");
-			codigo.remove(leitura);
+		
+		if (tipo.equalsIgnoreCase("E")) {
+			
+			leitura = Input.texto("Leitor cracha: ");
+			if (!codigo.contains(leitura)) {
+				Input.mensagem("Bem vindo! Acesso liberado");
+				codigo.add(leitura);
+			} else {
+				Input.mensagem("Entrada já foi registrada para esse cracha");
+			}
+		}else {
+			if (tipo.equalsIgnoreCase("S")) {
+			leitura = Input.texto("Leitor cracha: ");
+			
+			if (!codigo.contains(leitura)) {
+				Input.mensagem("Entrada não registrada - Acesso bloqueado");	
+			} else 
+				Input.mensagem("Obrigado pela visita");
+				codigo.remove(leitura);
+			}
 		}
-		
-		resp = Input.logico("Continuar?");
-		
-		}
-
 	}
 
+	}
 }

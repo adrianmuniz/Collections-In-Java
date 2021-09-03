@@ -23,7 +23,7 @@ public class Input {
 		return Integer.parseInt(texto(msg));
 	}
 	
-	public static String mensagem (String msg) {
-		return JOptionPane.showInputDialog(msg);
+	public static void mensagem (String msg) {
+		JOptionPane.showMessageDialog(null, msg);
 	}
 }
